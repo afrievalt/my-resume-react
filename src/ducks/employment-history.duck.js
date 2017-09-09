@@ -2,7 +2,7 @@ export const EMPLOYMENT_HISTORY_REQUEST = 'resume/EMPLOYMENT_HISTORY_REQUEST'
 export const EMPLOYMENT_HISTORY_SUCCESS = 'resume/EMPLOYMENT_HISTORY_SUCCESS'
 export const EMPLOYMENT_HISTORY_FAIL = 'resume/EMPLOYMENT_HISTORY_FAIL'
 
-const url = 'https://very-new.firebaseio.com/employmentHistory.json'
+const url = 'https://flower-nation.glitch.me/'
 
 export const handleLoadEmploymentHistory = () => dispatch => {
   dispatch({type: EMPLOYMENT_HISTORY_REQUEST})
