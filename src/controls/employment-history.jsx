@@ -21,26 +21,23 @@ export class Content extends Component {
   render() {
     const listItems = this.getListItems()
     return (
-          <List>
-            {listItems}
-          </List>      
+      <List>
+        {listItems}
+      </List>
     )
   }
-  getAvatar = src => (<Avatar src={src} style={style.avatar}/>) 
-  getLink = key => (<Link to={"/details/"+ key} />)
+  getAvatar = src => (<Avatar src={src} style={style.avatar}/>)
+  getLink = key => (<Link to={"/details/" + key}/>)
   getListItems = () => {
-    const icon = (<i className="fa fa-chevron-right" />)
-    const mapListItem = (li, i) => (
-      <ListItem
-        key={li.key}        
-        leftAvatar={this.getAvatar(li.img)}
-        rightIcon={icon}
-        primaryText={li.primaryText}
-        secondaryText={li.secondaryText}       
-        containerElement={this.getLink(li.key)}
-        innerDivStyle={style.innerDivStyle}
-      />
-    )
+    const icon = (<i className="fa fa-chevron-right"/>)
+    const mapListItem = (li, i) => (<ListItem
+      key={li.key}
+      leftAvatar={this.getAvatar(li.img)}
+      rightIcon={icon}
+      primaryText={li.primaryText}
+      secondaryText={li.secondaryText}
+      containerElement={this.getLink(li.key)}
+      innerDivStyle={style.innerDivStyle}/>)
     return this
       .props
       .rows
@@ -49,9 +46,7 @@ export class Content extends Component {
 }
 
 const mapStateToProps = (state) => {
-  return {
-    rows: getEmploymentHistoryList(state)
-  }
+  return {rows: getEmploymentHistoryList(state)}
 }
 
 export const EmploymentHistory = connect(mapStateToProps)(Content)

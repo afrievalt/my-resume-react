@@ -35,4 +35,25 @@ const reducer = (prev = {}, action) => {
   }
 }
 
+export const statusReducer = (prev = {}, action) => {
+  const {type} = action
+  switch (type) {
+    case EMPLOYMENT_HISTORY_REQUEST:
+      {
+        return "loading"
+      }
+    case EMPLOYMENT_HISTORY_FAIL:
+      {
+        return "error"
+      }
+    case EMPLOYMENT_HISTORY_SUCCESS:
+      {
+        return "none"
+      }
+    default:
+      return prev
+  }
+}
+
+
 export default reducer

@@ -1,31 +1,33 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import React, {Component} from 'react'
+import {connect} from 'react-redux'
+import {BrowserRouter, Route} from 'react-router-dom'
 
 import {DetailsSection} from './details-section'
 import {Home} from './home'
-import { handleLoadEmploymentHistory } from '../ducks/employment-history.duck'
+import {StatusMessage} from './status-message'
+import {handleLoadEmploymentHistory} from '../ducks/employment-history.duck'
 
-
-export class RouterContent extends Component {  
+export class RouterContent extends Component {
   render() {
     return (
       <BrowserRouter>
-          <Switch>
-            <Route component={DetailsSection} path="/details/:id"/>
-            <Route component={Home} path="/"/>              
-          </Switch>
-        </BrowserRouter>          
-    )    
-  } 
+        <div>
+          <Route component={DetailsSection} path="/details/:id"/>
+          <Route component={StatusMessage} path="/"/>
+          <Route component={Home} path="/" exact/>          
+        </div>
+      </BrowserRouter>
+    )
+  }
   componentWillMount() {
-    this.props.handleLoadEmploymentHistory()
-  } 
+    this
+      .props
+      .handleLoadEmploymentHistory()
+  }
 }
 
 const mapStateToProps = (state) => {
-  return {
-  }
+  return {}
 }
 
 const mapDispatchToProps = (dispatch) => {

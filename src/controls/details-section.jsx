@@ -38,8 +38,7 @@ export class Content extends Component {
               title={this.props.title}
               subtitle={this.props.subtitle}
               textStyle={style.textStyle}
-              avatar={avatar}
-              
+              avatar={avatar}              
             />
             <CardText>
               {this.props.description}
@@ -56,12 +55,11 @@ export class Content extends Component {
   getAvatar = () => (<Avatar src={this.props.img} style={style.avatar}/>) 
   getClose = () => (
     <Link to={'/'}><i style={style.icon} className="fa fa-arrow-circle-left appbar__back"/></Link>
-  )
- 
+  ) 
 }
 
 const mapStateToProps = (state, ownProps) => {
-  const {id} = ownProps.match.params
+  const {id} = ownProps.match.params //id from router https://very-new.firebaseapp.com/details/dc => id= dc
   return {
     ...selectEmploymentDetails(state, id)
   }

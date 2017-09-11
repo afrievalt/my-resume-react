@@ -3,12 +3,14 @@ import thunk from 'redux-thunk';
 
 import sortBy from './ducks/sort.duck'
 import filter from './ducks/filter.duck'
-import employmentHistory_byId from './ducks/employment-history.duck'
+import employmentHistory_byId, {statusReducer as status} from './ducks/employment-history.duck'
+
 
 const reducer = combineReducers({
   sortBy,
   filter,
-  employmentHistory_byId
+  employmentHistory_byId,
+  status
 })
 
 export default function configureStore(initialState) {
@@ -20,7 +22,8 @@ export default function configureStore(initialState) {
 const stateDefault = {
   "sortBy": "name",
   "filter": "",
-  "employmentHistory_byId": {}  
+  "employmentHistory_byId": {},
+  "status": "loading" 
 }
 
 export const store = configureStore(stateDefault)

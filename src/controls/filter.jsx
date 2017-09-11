@@ -31,8 +31,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    handleChangeFilter: (target, payload) => dispatch(handleChangeFilter(payload)),
-    
+    handleChangeFilter: (target, payload) => dispatch(handleChangeFilter(payload))
   }
 }
 
